@@ -17,69 +17,6 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -2503,7 +2440,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><b>SWARM INTELLIGENCE</b></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title"><b>SWARM INTELLIGENCE</b></h1>
 </div>
 
 
@@ -2613,8 +2550,6 @@ vertical-align: -.125em;
 <br>
 </p>
 <p>It should be noted that all materials presented are copyrighted by Dr. Nikolaus Correll, and this site is only an attempt to make these materials accesible to others with Dr. Correll’s permission.</p>
-<!-- -->
-
 </section>
 
 </main>
@@ -2770,57 +2705,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -2869,74 +2753,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;&lt;b&gt;SWARM INTELLIGENCE&lt;/b&gt;&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;[Pratik Ingle](https://pratik-ingle.github.io)&quot; </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;Mar 09 2023&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    theme:</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      light: cosmo</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">      dark: [darkly, theme-dark.scss]</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    # sidebar:</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">    #   tools: </span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">    #     - icon: github</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">    #       menu:</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">    #         - text: Source Code</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">    #           url:  https://code.com</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">    #         - text: Report a Bug</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">    #           url:  https://bugs.com --&gt;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Awesome Collective Robotics --&gt;</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">================</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;center&gt;</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://github.com/pratik-ingle/swarm_intelligence&quot;</span><span class="kw">&gt;</span> <span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://skills.thijs.gg/icons?i=github&quot;</span> <span class="er">width</span><span class="ot">=</span><span class="st">&quot;20&quot;</span><span class="kw">&gt;</span> <span class="kw">&lt;/a&gt;</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>\ </span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>\</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/center&gt;</span> </span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- [![github](https://skills.thijs.gg/icons?i=github,html)](https://github.com/pratik-ingle/awesome_Collective_Robotics) --&gt;</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="al">![](hb.jpeg)</span>{fig-align=&quot;center&quot; height=&quot;350&quot;}</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>These are lecture notes on swarm intelligence presented in the course CSCI4830/CSCI7000: Swarm Intelligence by <span class="co">[</span><span class="ot">Dr. Nikolaus Correll</span><span class="co">](https://www.colorado.edu/mse/nikolaus-correll)</span> in 2016. The course provides foundational knowledge for individuals interested in entering the field of swarm intelligence and swarm robotics. </span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>| Topic |    Lecture Notes    |   Slide  |</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>| --------|---------|---------|</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>| 1. Swarm Intelligence - Overview and Definition  | <span class="co">[</span><span class="ot">Doc</span><span class="co">](https://docs.google.com/document/d/1YLA9R_esbTGoc05OyYRNgNA-h1JeYUW_VFHIZ3X8gK8/edit?usp=sharing)</span>  | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/1HgoMFxCTYeNmSb4u9M8633xOuwu8JF9maEaNfehET1g/edit?usp=sharing)</span> |</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>| 2. Swarm Intelligence - Synchronization and Consensus  | <span class="co">[</span><span class="ot">Doc</span><span class="co">](https://docs.google.com/document/d/1qwDwyhyaqi7huVUhJXc4zZqVEjw2dWX8lqbjRwcOOf8/edit?usp=sharing)</span>  | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/1v0bc8Ig3i6M07gMVDNIdLahrG2dnn8So3pBqtRMwlR8/edit?usp=share_link)</span> |</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>| 3. Swarm Intelligence - Task Allocation  | <span class="co">[</span><span class="ot">Doc</span><span class="co">](https://docs.google.com/document/d/1KEjOtj_6WDmG9PtehDUdCyr22N2plSTNZmb8cWmPW00/edit?usp=sharing)</span>  | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/1xLGpO93NXRwgVyWIpKNRdHXCACmzdsXYN0MvFOk4ExE/edit?usp=sharing)</span> |</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>| 4. Swarm Intelligence - Robotic Materials  | <span class="co">[</span><span class="ot">Doc</span><span class="co">](https://docs.google.com/document/d/1cjxUysVTWPWBweSTUthh9guqKn19aYth220_c6S4asc/edit?usp=sharing)</span>  | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/1Az-yWfSQ4ZN0VbgPW99ecpwx4Otj5RpDqGfP9Urxjbs/edit?usp=sharing)</span> |</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>| 5. Swarm Intelligence - Shortest Path problems and Ant Colony Optimization  | <span class="co">[</span><span class="ot">Doc</span><span class="co">](https://docs.google.com/document/d/1NY3ZE5ZCrppEAlpdczE8zzTlg3DExotZ8YnGXGX_9zQ/edit?usp=share_link)</span>  | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/126v36wWyAbAjasD1PazKhiiHv-AjEEd580JyAQzCiac/edit?usp=sharing)</span> |</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>| 6. Swarm Intelligence - Particle Swarm Optimization  | <span class="co">[</span><span class="ot">Doc</span><span class="co">](https://docs.google.com/document/d/1lzLBuA2ooPrjiWoLG4yqPm82s4SYmrScAML5c-RH0Ko/edit?usp=sharing)</span>  | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/1PzpsY0bevhra8XP_MTfKCF5gq10Dl7R_QQDlYmmWyCM/edit?usp=sharing)</span> |</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>| 7. Swarm Intelligence - Neural Networks  | <span class="co">[</span><span class="ot">Doc</span><span class="co">](https://docs.google.com/document/d/1WY1Tm50m3eb_aBVcbjkYvcgLpJfpXd2EBDCmvrk5Cug/edit?usp=sharing)</span>  | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/1egGvvsxfOva9Ow3du9bKl92TJPBEGHwqAVqtH5-Ulvs/edit?usp=sharing)</span> |</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>| 8. Swarm Intelligence - Evolutionary Algorithms  | <span class="co">[</span><span class="ot">Doc</span><span class="co">](https://docs.google.com/document/d/1hv4GAksCK7c_4wE_ZBJ-XM7flrv-RrzWkjdPZv0QOFc/edit?usp=sharing)</span>  | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/1XdKarnFuoSxktQ1kI3nULgGERIJC4s6djWH5o7fygIg/edit?usp=sharing)</span> |</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>| 9. Swarm Intelligence - Designing Algorithms for Embodied Swarm Intelligence  | <span class="co">[</span><span class="ot">Doc</span><span class="co">](https://docs.google.com/document/d/1rG8-Gp04ZRWww6e4X1pnBoAV__8Dfc4gTrjmnq34dYA/edit?usp=sharing)</span>  | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/1h0oUsbJ8RqK-pu_4dM8b012UnoB0RWBd0KDlq4nOsnU/edit?usp=sharing)</span> |</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>| 10. Swarm Intelligence - Mini Projects  | -- | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/10BzFxkK9Z1tvtFDL3Ut5VN6IYtJxiaiLbKVUs48yA4U/edit?usp=sharing)</span> |</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>| 11. Swarm Intelligence - Project Ideas  | -- | <span class="co">[</span><span class="ot">Slide</span><span class="co">](https://docs.google.com/presentation/d/15FJ1anC4DN7NzzUnqbezSTizPvxXYqsLbXzJjU6YZX8/edit?usp=sharing)</span> |</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>\</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>\</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>It should be noted that all materials presented are copyrighted by Dr. Nikolaus Correll, and this site is only an attempt to make these materials accesible to others with Dr. Correll&#39;s permission.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
 
 
